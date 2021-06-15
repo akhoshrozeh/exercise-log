@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<app-entry [exercises]="exercises"
+      [exerOpts]="exerOpts"
+      (addExercise)="addExercise();"
+      (setCurrExercise)="setCurrExercise($event)"
+      (deleteCurrExercise)="deleteCurrExercise()"
+      (submitEntry)="submitEntry()"
+      (deleteLastExercise)="deleteLastExercise()"></app-entry>

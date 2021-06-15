@@ -1,0 +1,31 @@
+<h2>Workout Entry</h2>
+<button type="button" class="btn btn-primary" (click)="addExercise.emit();">Add Exercise</button>
+<button type="button" class="btn btn-danger" (click)="deleteCurrExercise.emit();">Delete Selected Exercise</button>
+<button type="button" class="btn btn-danger" (click)="deleteLastExercise.emit()">Delete Last Exercise</button>
+<form name="entry">
+    <table class="table table-striped table-dark">
+        <thead>
+            <th>Name</th>
+            <th>Set 1</th>
+            <th>Set 2</th>
+            <th>Set 3</th>
+        </thead>
+        
+        <tr *ngFor="let ex of exercises;" (click)="setCurrExercise.emit(ex)" (click)=onSelect(ex) [class.selected]="ex === selectedEx">
+            <td><select [(ngModel)]="ex.name" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let opt of exerOpts;" value="{{ opt }}">{{ opt }}</option>
+            </select></td>
+            <!-- <td><input type="string" [(ngModel)]="ex.name" name="{{ ex.name }}" value="{{ ex.name }}" [ngModelOptions]="{standalone: true}"></td> -->
+            <td><input type="number" [(ngModel)]="ex.sets[0]" name="{{ ex.name }}-set0" value="{{ ex.sets[0] }}" [ngModelOptions]="{standalone: true}"></td>
+            <td><input type="number" [(ngModel)]="ex.sets[1]" name="{{ ex.name }}-set1" value="{{ ex.sets[1] }}" [ngModelOptions]="{standalone: true}"></td>
+            <td><input type="number" [(ngModel)]="ex.sets[2]" name="{{ ex.name }}-set2" value="{{ ex.sets[2] }}" [ngModelOptions]="{standalone: true}"></td>
+            <!-- <td style="white-space: nowrap"></td> -->
+        </tr>
+       
+
+    </table>
+    <button type="submit" class="btn btn-success btn-lg" (click)="submitEntry.emit()">Log Entry</button> 
+</form>
+
+
+

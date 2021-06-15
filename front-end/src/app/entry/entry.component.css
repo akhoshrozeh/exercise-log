@@ -1,0 +1,41 @@
+/* form {
+    font: normal medium/1.4 sans-serif;
+  }
+  table td:tr:hover {
+    background-color: #e8cb73;
+  }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #ccc;
+} */
+
+
+/* table {
+  width:100%; 
+  border-collapse:collapse; 
+}
+td{ 
+  padding:7px; border:#587091 1px solid;
+} */
+/* Define the default color for all the table rows */
+ /* tr{
+  background: #5f959c;
+} */
+
+/* Define the hover highlight color for the table row */
+ tr:hover {
+        background-color: #4bc4c85b;
+ }
+
+ tr.selected {
+  background-color: #4bc4c8d2;
+ }
+
+ button.btn-primary {
+    width:auto;
+ }
